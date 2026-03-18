@@ -18,7 +18,7 @@ local function queryChatGPT(message_history)
   -- Use api_key from CONFIGURATION
   local api_key_value = CONFIGURATION and CONFIGURATION.api_key
   local api_url = CONFIGURATION and CONFIGURATION.base_url or "https://api.openai.com/v1/chat/completions"
-  local model = CONFIGURATION and CONFIGURATION.model or "gpt-4o-mini"
+  local model = CONFIGURATION and CONFIGURATION.model
 
   -- Determine whether to use http or https
   local request_library = api_url:match("^https://") and https or http
