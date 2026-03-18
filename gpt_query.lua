@@ -44,6 +44,13 @@ local function queryChatGPT(message_history)
     ["Authorization"] = "Bearer " .. api_key_value,
   }
 
+  -- Add additional headers if they exist
+  if CONFIGURATION and CONFIGURATION.additional_headers then
+    for key, value in pairs(CONFIGURATION.additional_headers) do
+      headers[key] = value
+    end
+  end
+
   local responseBody = {}
 
   -- Make the HTTP/HTTPS request

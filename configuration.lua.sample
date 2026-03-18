@@ -3,6 +3,7 @@ local CONFIGURATION = {
     model = "gpt-4o-mini",
     base_url = "https://api.openai.com/v1/chat/completions",
     additional_parameters = {},
+    additional_headers = {},
 }
 
 return CONFIGURATION

@@ -31,7 +31,8 @@ local CONFIGURATION = {
     api_key = "ollama",
     model = "zephyr",
     base_url = "http://192.168.1.87:11434/v1/chat/completions",
-    additional_parameters = {}
+    additional_parameters = {},
+    additional_headers = {},
 }
 
 return CONFIGURATION
