@@ -1,13 +1,4 @@
-local api_key = nil
 local CONFIGURATION = nil
-
--- Attempt to load the api_key module. IN A LATER VERSION, THIS WILL BE REMOVED
-local success, result = pcall(function() return require("api_key") end)
-if success then
-  api_key = result.key
-else
-  print("api_key.lua not found, skipping...")
-end
 
 -- Attempt to load the configuration module
 success, result = pcall(function() return require("configuration") end)
@@ -24,8 +15,8 @@ local ltn12 = require("ltn12")
 local json = require("json")
 
 local function queryChatGPT(message_history)
-  -- Use api_key from CONFIGURATION or fallback to the api_key module
-  local api_key_value = CONFIGURATION and CONFIGURATION.api_key or api_key
+  -- Use api_key from CONFIGURATION
+  local api_key_value = CONFIGURATION and CONFIGURATION.api_key
   local api_url = CONFIGURATION and CONFIGURATION.base_url or "https://api.openai.com/v1/chat/completions"
   local model = CONFIGURATION and CONFIGURATION.model or "gpt-4o-mini"
 

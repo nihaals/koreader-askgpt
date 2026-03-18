@@ -12,8 +12,6 @@ If you want to do this on a Kindle, you are going to have to jailbreak it. I rec
 
 Acquire an API key from an API account on OpenAI (with credits). Once you have your API key, create a `configuration.lua` file in the following structure or modify and rename the `configuration.lua.sample` file:
 
-> **Note:** The prior `api_key.lua` style configuration is deprecated. Please use the new `configuration.lua` style configuration.
-
 ```lua
 local CONFIGURATION = {
     api_key = "YOUR_API_KEY",
